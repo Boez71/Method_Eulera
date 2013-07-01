@@ -192,6 +192,7 @@
             this.button_solve.Text = "Решить";
             this.toolTip1.SetToolTip(this.button_solve, "Нажмите, чтобы вывести график");
             this.button_solve.UseVisualStyleBackColor = true;
+            this.button_solve.Click += new System.EventHandler(this.button_solve_Click);
             // 
             // groupBox2
             // 
