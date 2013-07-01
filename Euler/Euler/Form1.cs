@@ -102,5 +102,19 @@ namespace Euler
                 MessageBox.Show(ex.Message);
             }
         }
+
+        private void RandomSetToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Random rnd = new Random();
+            // получаем точность 
+            int presision = rnd.Next(1, 5);
+            textBox1.Text = presision.ToString();
+            //получаем параметр a
+            textBox_a.Text = Math.Round(rnd.NextDouble() * 10, presision).ToString();
+            textBox_b.Text = Math.Round(rnd.NextDouble() * 10, presision).ToString();
+            textBox_x0.Text = Math.Round(rnd.NextDouble() * 10, presision).ToString();
+            textBox_y0.Text = Math.Round(rnd.NextDouble() * 10, presision).ToString();
+            textBox_h.Text = Math.Round(rnd.NextDouble() / 1, 1).ToString();
+        }
     }
 }
