@@ -102,5 +102,38 @@ namespace Euler
                 MessageBox.Show(ex.Message);
             }
         }
+        // Сохранение в текстовый файл
+        private void TextSaveToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog sfd = new SaveFileDialog();
+            sfd.Filter = "Текстовые файлы (*.txt)|*.txt";
+            if (sfd.ShowDialog() != DialogResult.Cancel)
+            {
+                string fileName = sfd.FileName;
+                //Записываем в файл данные построчно
+                if (fileName != null && fileName != "")
+                {
+
+                    StreamWriter writer = new StreamWriter(fileName);
+                    try
+                    {
+                        for (int i = 0; i < countDots; i++)
+                        {
+                            writer.WriteLine("X: " + X[i].ToString() + " , Y: " + Y[i].ToString());
+                        }
+                        writer.Flush();
+                        MessageBox.Show("Сохранение в текстовый файл завершено");
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
+                    finally
+                    {
+                        writer.Close();
+                    }
+                }
+            }
+        }
     }
 }
