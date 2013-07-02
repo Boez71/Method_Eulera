@@ -102,5 +102,11 @@ namespace Euler
                 MessageBox.Show(ex.Message);
             }
         }
+
+        private void оПрограммеToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AboutBox1 aboutForm = new AboutBox1();
+            aboutForm.Show();
+        }
     }
 }
