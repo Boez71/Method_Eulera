@@ -116,5 +116,38 @@ namespace Euler
             textBox_y0.Text = Math.Round(rnd.NextDouble() * 10, presision).ToString();
             textBox_h.Text = Math.Round(rnd.NextDouble() / 1, 1).ToString();
         }
+
+        private void FileSetToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog ofd = new OpenFileDialog();
+            ofd.Filter = "Текстовые файлы (*.txt)|*.txt";
+            if (ofd.ShowDialog() != DialogResult.Cancel)
+            {
+                string fileName = ofd.FileName;
+                //Открываем файл и считываем из него данные построчно
+                if (fileName != null && fileName != "")
+                {
+
+                    StreamReader reader = new StreamReader(fileName);
+                    try
+                    {
+                        textBox_a.Text = reader.ReadLine();
+                        textBox_b.Text = reader.ReadLine();
+                        textBox_x0.Text = reader.ReadLine();
+                        textBox_y0.Text = reader.ReadLine();
+                        textBox_h.Text = reader.ReadLine();
+                        textBox1.Text = reader.ReadLine();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
+                    finally
+                    {
+                        reader.Close();
+                    }
+                }
+            }
+        }
     }
 }
