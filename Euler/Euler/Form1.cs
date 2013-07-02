@@ -149,5 +149,26 @@ namespace Euler
                 }
             }
         }
+        // Задание данных по формуле y=0.1*x+x
+        private void FormulaSetToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            // сгененерируем х для а
+            Random rnd = new Random();
+            int x = rnd.Next(0, 10);
+            textBox_a.Text = (0.1 * x + x).ToString();
+            // сгененерируем х для b
+            x = rnd.Next(x, x + 10);
+            textBox_b.Text = (0.1 * x + x).ToString();
+            // устанавливаем для х0 значение а
+            textBox_x0.Text = textBox_a.Text;
+            // устанавливаем для y0 значение 0
+            textBox_y0.Text = "0";
+            //устанавливаем для h значение
+            double h0 = ((double)rnd.Next(1, 10)) / 10;
+            textBox_h.Text = (0.1 * h0 + h0).ToString();
+
+            //устанавливаем точность
+            textBox1.Text = (rnd.Next(1, 5)).ToString();
+        }
     }
 }

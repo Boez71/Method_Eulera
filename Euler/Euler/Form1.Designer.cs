@@ -32,6 +32,7 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.задатьПараметрыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.RandomSetToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.FileSetToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.textBox_a = new System.Windows.Forms.TextBox();
             this.textBox_b = new System.Windows.Forms.TextBox();
@@ -49,7 +50,7 @@
             this.label_a = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.zedGraph = new ZedGraph.ZedGraphControl();
-            this.FileSetToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.FormulaSetToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -69,7 +70,8 @@
             // 
             this.задатьПараметрыToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.RandomSetToolStripMenuItem,
-            this.FileSetToolStripMenuItem});
+            this.FileSetToolStripMenuItem,
+            this.FormulaSetToolStripMenuItem});
             this.задатьПараметрыToolStripMenuItem.Name = "задатьПараметрыToolStripMenuItem";
             this.задатьПараметрыToolStripMenuItem.Size = new System.Drawing.Size(120, 20);
             this.задатьПараметрыToolStripMenuItem.Text = "Задать параметры";
@@ -80,6 +82,13 @@
             this.RandomSetToolStripMenuItem.Size = new System.Drawing.Size(191, 22);
             this.RandomSetToolStripMenuItem.Text = "Случайным образом";
             this.RandomSetToolStripMenuItem.Click += new System.EventHandler(this.RandomSetToolStripMenuItem_Click);
+            // 
+            // FileSetToolStripMenuItem
+            // 
+            this.FileSetToolStripMenuItem.Name = "FileSetToolStripMenuItem";
+            this.FileSetToolStripMenuItem.Size = new System.Drawing.Size(191, 22);
+            this.FileSetToolStripMenuItem.Text = "Из файла";
+            this.FileSetToolStripMenuItem.Click += new System.EventHandler(this.FileSetToolStripMenuItem_Click);
             // 
             // textBox_a
             // 
@@ -243,12 +252,12 @@
             this.zedGraph.Size = new System.Drawing.Size(828, 390);
             this.zedGraph.TabIndex = 41;
             // 
-            // FileSetToolStripMenuItem
+            // FormulaSetToolStripMenuItem
             // 
-            this.FileSetToolStripMenuItem.Name = "FileSetToolStripMenuItem";
-            this.FileSetToolStripMenuItem.Size = new System.Drawing.Size(191, 22);
-            this.FileSetToolStripMenuItem.Text = "Из файла";
-            this.FileSetToolStripMenuItem.Click += new System.EventHandler(this.FileSetToolStripMenuItem_Click);
+            this.FormulaSetToolStripMenuItem.Name = "FormulaSetToolStripMenuItem";
+            this.FormulaSetToolStripMenuItem.Size = new System.Drawing.Size(191, 22);
+            this.FormulaSetToolStripMenuItem.Text = "По формуле";
+            this.FormulaSetToolStripMenuItem.Click += new System.EventHandler(this.FormulaSetToolStripMenuItem_Click);
             // 
             // FormMy
             // 
@@ -298,6 +307,7 @@
         private System.Windows.Forms.ToolStripMenuItem задатьПараметрыToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem RandomSetToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem FileSetToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem FormulaSetToolStripMenuItem;
     }
 }
 
