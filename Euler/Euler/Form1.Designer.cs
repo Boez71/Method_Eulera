@@ -30,6 +30,9 @@
         {
             this.components = new System.ComponentModel.Container();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.задатьПараметрыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.сохранитьРезультатыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.TextSaveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.textBox_a = new System.Windows.Forms.TextBox();
             this.textBox_b = new System.Windows.Forms.TextBox();
@@ -47,9 +50,7 @@
             this.label_a = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.zedGraph = new ZedGraph.ZedGraphControl();
-            this.задатьПараметрыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.сохранитьРезультатыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.TextSaveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.WordSaveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -65,6 +66,28 @@
             this.menuStrip1.Size = new System.Drawing.Size(845, 24);
             this.menuStrip1.TabIndex = 2;
             this.menuStrip1.Text = "menuStrip1";
+            // 
+            // задатьПараметрыToolStripMenuItem
+            // 
+            this.задатьПараметрыToolStripMenuItem.Name = "задатьПараметрыToolStripMenuItem";
+            this.задатьПараметрыToolStripMenuItem.Size = new System.Drawing.Size(120, 20);
+            this.задатьПараметрыToolStripMenuItem.Text = "Задать параметры";
+            // 
+            // сохранитьРезультатыToolStripMenuItem
+            // 
+            this.сохранитьРезультатыToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.TextSaveToolStripMenuItem,
+            this.WordSaveToolStripMenuItem});
+            this.сохранитьРезультатыToolStripMenuItem.Name = "сохранитьРезультатыToolStripMenuItem";
+            this.сохранитьРезультатыToolStripMenuItem.Size = new System.Drawing.Size(142, 20);
+            this.сохранитьРезультатыToolStripMenuItem.Text = "Сохранить результаты";
+            // 
+            // TextSaveToolStripMenuItem
+            // 
+            this.TextSaveToolStripMenuItem.Name = "TextSaveToolStripMenuItem";
+            this.TextSaveToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
+            this.TextSaveToolStripMenuItem.Text = "Текстовый файл";
+            this.TextSaveToolStripMenuItem.Click += new System.EventHandler(this.TextSaveToolStripMenuItem_Click);
             // 
             // textBox_a
             // 
@@ -228,26 +251,12 @@
             this.zedGraph.Size = new System.Drawing.Size(828, 390);
             this.zedGraph.TabIndex = 41;
             // 
-            // задатьПараметрыToolStripMenuItem
+            // WordSaveToolStripMenuItem
             // 
-            this.задатьПараметрыToolStripMenuItem.Name = "задатьПараметрыToolStripMenuItem";
-            this.задатьПараметрыToolStripMenuItem.Size = new System.Drawing.Size(120, 20);
-            this.задатьПараметрыToolStripMenuItem.Text = "Задать параметры";
-            // 
-            // сохранитьРезультатыToolStripMenuItem
-            // 
-            this.сохранитьРезультатыToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.TextSaveToolStripMenuItem});
-            this.сохранитьРезультатыToolStripMenuItem.Name = "сохранитьРезультатыToolStripMenuItem";
-            this.сохранитьРезультатыToolStripMenuItem.Size = new System.Drawing.Size(142, 20);
-            this.сохранитьРезультатыToolStripMenuItem.Text = "Сохранить результаты";
-            // 
-            // TextSaveToolStripMenuItem
-            // 
-            this.TextSaveToolStripMenuItem.Name = "TextSaveToolStripMenuItem";
-            this.TextSaveToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
-            this.TextSaveToolStripMenuItem.Text = "Текстовый файл";
-            this.TextSaveToolStripMenuItem.Click += new System.EventHandler(this.TextSaveToolStripMenuItem_Click);
+            this.WordSaveToolStripMenuItem.Name = "WordSaveToolStripMenuItem";
+            this.WordSaveToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
+            this.WordSaveToolStripMenuItem.Text = "Файл Word";
+            this.WordSaveToolStripMenuItem.Click += new System.EventHandler(this.WordSaveToolStripMenuItem_Click);
             // 
             // FormMy
             // 
@@ -297,6 +306,7 @@
         private System.Windows.Forms.ToolStripMenuItem задатьПараметрыToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem сохранитьРезультатыToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem TextSaveToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem WordSaveToolStripMenuItem;
     }
 }
 

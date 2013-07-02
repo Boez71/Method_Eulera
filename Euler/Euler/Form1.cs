@@ -8,6 +8,8 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using ZedGraph;
+using Microsoft.Office.Interop.Word;
+
 
 namespace Euler
 {
@@ -134,6 +136,51 @@ namespace Euler
                     }
                 }
             }
+        }
+        // Сохранение в файл Word
+        private void WordSaveToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                // вывод отчета в ворд
+                Microsoft.Office.Interop.Word.Application msWord;
+
+                Microsoft.Office.Interop.Word.Document doc;
+
+                object objMiss;
+
+                object endofdoc = "\\endofdoc";
+
+                msWord = new Microsoft.Office.Interop.Word.Application();
+                objMiss = System.Reflection.Missing.Value;
+                msWord.Visible = true;
+
+                doc = msWord.Documents.Add(ref objMiss, ref objMiss, ref objMiss, ref objMiss);
+
+                Microsoft.Office.Interop.Word.Table tbl1;
+
+                Microsoft.Office.Interop.Word.Range wordRange = doc.Bookmarks.get_Item(ref endofdoc).Range;
+
+                int rowsNum = countDots + 1;
+
+                tbl1 = doc.Content.Tables.Add(wordRange, rowsNum, 2, ref objMiss, ref objMiss);
+
+                tbl1.Borders.Enable = 1;
+
+                tbl1.Cell(1, 1).Range.Text = "Координата Х";
+                tbl1.Cell(1, 2).Range.Text = "Координата Y";
+
+                // добавляем в таблицу данные
+                for (int i = 2; i <= rowsNum; i++)
+                {
+
+                    // добавляем текст
+                    tbl1.Cell(i, 1).Range.Text = X[i - 2].ToString();
+                    tbl1.Cell(i, 2).Range.Text = Y[i - 2].ToString();
+                }
+            }
+            catch (Exception)
+            { }
         }
     }
 }
