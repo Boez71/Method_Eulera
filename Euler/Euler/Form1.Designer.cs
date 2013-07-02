@@ -29,7 +29,11 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMy));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.задатьПараметрыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.сохранитьРезультатToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.оПрограммеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.textBox_a = new System.Windows.Forms.TextBox();
             this.textBox_b = new System.Windows.Forms.TextBox();
@@ -47,12 +51,12 @@
             this.label_a = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.zedGraph = new ZedGraph.ZedGraphControl();
-            this.задатьПараметрыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.сохранитьРезультатToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.оПрограммеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -66,6 +70,25 @@
             this.menuStrip1.Size = new System.Drawing.Size(845, 24);
             this.menuStrip1.TabIndex = 2;
             this.menuStrip1.Text = "menuStrip1";
+            // 
+            // задатьПараметрыToolStripMenuItem
+            // 
+            this.задатьПараметрыToolStripMenuItem.Name = "задатьПараметрыToolStripMenuItem";
+            this.задатьПараметрыToolStripMenuItem.Size = new System.Drawing.Size(120, 20);
+            this.задатьПараметрыToolStripMenuItem.Text = "Задать параметры";
+            // 
+            // сохранитьРезультатToolStripMenuItem
+            // 
+            this.сохранитьРезультатToolStripMenuItem.Name = "сохранитьРезультатToolStripMenuItem";
+            this.сохранитьРезультатToolStripMenuItem.Size = new System.Drawing.Size(133, 20);
+            this.сохранитьРезультатToolStripMenuItem.Text = "Сохранить результат";
+            // 
+            // оПрограммеToolStripMenuItem
+            // 
+            this.оПрограммеToolStripMenuItem.Name = "оПрограммеToolStripMenuItem";
+            this.оПрограммеToolStripMenuItem.Size = new System.Drawing.Size(94, 20);
+            this.оПрограммеToolStripMenuItem.Text = "О программе";
+            this.оПрограммеToolStripMenuItem.Click += new System.EventHandler(this.оПрограммеToolStripMenuItem_Click);
             // 
             // textBox_a
             // 
@@ -128,6 +151,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.label5);
+            this.groupBox1.Controls.Add(this.pictureBox1);
             this.groupBox1.Controls.Add(this.button_solve);
             this.groupBox1.Controls.Add(this.textBox1);
             this.groupBox1.Controls.Add(this.label6);
@@ -229,24 +254,23 @@
             this.zedGraph.Size = new System.Drawing.Size(828, 390);
             this.zedGraph.TabIndex = 41;
             // 
-            // задатьПараметрыToolStripMenuItem
+            // pictureBox1
             // 
-            this.задатьПараметрыToolStripMenuItem.Name = "задатьПараметрыToolStripMenuItem";
-            this.задатьПараметрыToolStripMenuItem.Size = new System.Drawing.Size(120, 20);
-            this.задатьПараметрыToolStripMenuItem.Text = "Задать параметры";
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(512, 19);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(62, 45);
+            this.pictureBox1.TabIndex = 15;
+            this.pictureBox1.TabStop = false;
             // 
-            // сохранитьРезультатToolStripMenuItem
+            // label5
             // 
-            this.сохранитьРезультатToolStripMenuItem.Name = "сохранитьРезультатToolStripMenuItem";
-            this.сохранитьРезультатToolStripMenuItem.Size = new System.Drawing.Size(133, 20);
-            this.сохранитьРезультатToolStripMenuItem.Text = "Сохранить результат";
-            // 
-            // оПрограммеToolStripMenuItem
-            // 
-            this.оПрограммеToolStripMenuItem.Name = "оПрограммеToolStripMenuItem";
-            this.оПрограммеToolStripMenuItem.Size = new System.Drawing.Size(94, 20);
-            this.оПрограммеToolStripMenuItem.Text = "О программе";
-            this.оПрограммеToolStripMenuItem.Click += new System.EventHandler(this.оПрограммеToolStripMenuItem_Click);
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(440, 36);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(56, 13);
+            this.label5.TabIndex = 11;
+            this.label5.Text = "Функция:";
             // 
             // FormMy
             // 
@@ -268,6 +292,7 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -296,6 +321,8 @@
         private System.Windows.Forms.ToolStripMenuItem задатьПараметрыToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem сохранитьРезультатToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem оПрограммеToolStripMenuItem;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label label5;
     }
 }
 

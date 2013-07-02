@@ -123,4 +123,17 @@
   <metadata name="toolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>132, 17</value>
   </metadata>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="pictureBox1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        R0lGODlhMwAhAIQAAP///wAAANDQ0MDAwJCQkICAgKCgoCAgIGBgYODg4HBwcFBQUPDw8LCwsDAwMEBA
+        QBAQEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH/C05FVFNDQVBF
+        Mi4wAwEBAAAh+QQBAAAAACwAAAAAMwAhAAAI/wABCBxIsKDBgwgLChhAYKCAAgkjSpwIwACAAwMEIkBA
+        saNHAwkSBEgg8IBFjygnKlggUCTJlDARmhRo4EDMmwYDCNDIkWICljgPBmAAgMFMigQcBD1ogECDAiM7
+        Lmi4FGFNj0OrEnRAFWPHAUC1ClxAVMFJigoaiB2YoEEDogYXUgXwEIDatRQtegWwUeKCB4ADC1YQE6TL
+        kmfxogV6WDGAAJAjSw6AmKZNiQsHaN68eedNnTwnFhhNunSBxCmzGkXtOGLTp1Fbo7wqeyLXkhlr+y3L
+        WrfBtm99Cx/eWi4DucQLNtg5AGOD2MkBQKxo83h0g32vHzyqnWDju9EbQA+oSNmu5+gCEAxo4FTzwIAA
+        Ow==
+</value>
+  </data>
 </root>
