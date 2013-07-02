@@ -104,85 +104,8 @@ namespace Euler
                 MessageBox.Show(ex.Message);
             }
         }
-        // Сохранение в текстовый файл
-        private void TextSaveToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            SaveFileDialog sfd = new SaveFileDialog();
-            sfd.Filter = "Текстовые файлы (*.txt)|*.txt";
-            if (sfd.ShowDialog() != DialogResult.Cancel)
-            {
-                string fileName = sfd.FileName;
-                //Записываем в файл данные построчно
-                if (fileName != null && fileName != "")
-                {
 
-                    StreamWriter writer = new StreamWriter(fileName);
-                    try
-                    {
-                        for (int i = 0; i < countDots; i++)
-                        {
-                            writer.WriteLine("X: " + X[i].ToString() + " , Y: " + Y[i].ToString());
-                        }
-                        writer.Flush();
-                        MessageBox.Show("Сохранение в текстовый файл завершено");
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show(ex.Message);
-                    }
-                    finally
-                    {
-                        writer.Close();
-                    }
-                }
-            }
-        }
-        // Сохранение в файл Word
-        private void WordSaveToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                // вывод отчета в ворд
-                Microsoft.Office.Interop.Word.Application msWord;
-
-                Microsoft.Office.Interop.Word.Document doc;
-
-                object objMiss;
-
-                object endofdoc = "\\endofdoc";
-
-                msWord = new Microsoft.Office.Interop.Word.Application();
-                objMiss = System.Reflection.Missing.Value;
-                msWord.Visible = true;
-
-                doc = msWord.Documents.Add(ref objMiss, ref objMiss, ref objMiss, ref objMiss);
-
-                Microsoft.Office.Interop.Word.Table tbl1;
-
-                Microsoft.Office.Interop.Word.Range wordRange = doc.Bookmarks.get_Item(ref endofdoc).Range;
-
-                int rowsNum = countDots + 1;
-
-                tbl1 = doc.Content.Tables.Add(wordRange, rowsNum, 2, ref objMiss, ref objMiss);
-
-                tbl1.Borders.Enable = 1;
-
-                tbl1.Cell(1, 1).Range.Text = "Координата Х";
-                tbl1.Cell(1, 2).Range.Text = "Координата Y";
-
-                // добавляем в таблицу данные
-                for (int i = 2; i <= rowsNum; i++)
-                {
-
-                    // добавляем текст
-                    tbl1.Cell(i, 1).Range.Text = X[i - 2].ToString();
-                    tbl1.Cell(i, 2).Range.Text = Y[i - 2].ToString();
-                }
-            }
-            catch (Exception)
-            { }
-        }
-
+        // Задаем параметры случайным образом
         private void RandomSetToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Random rnd = new Random();
@@ -229,6 +152,7 @@ namespace Euler
                 }
             }
         }
+
         // Задание данных по формуле y=0.1*x+x
         private void FormulaSetToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -250,5 +174,86 @@ namespace Euler
             //устанавливаем точность
             textBox1.Text = (rnd.Next(1, 5)).ToString();
         }
+
+        // Сохранение в текстовый файл
+        private void TextSaveToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog sfd = new SaveFileDialog();
+            sfd.Filter = "Текстовые файлы (*.txt)|*.txt";
+            if (sfd.ShowDialog() != DialogResult.Cancel)
+            {
+                string fileName = sfd.FileName;
+                //Записываем в файл данные построчно
+                if (fileName != null && fileName != "")
+                {
+
+                    StreamWriter writer = new StreamWriter(fileName);
+                    try
+                    {
+                        for (int i = 0; i < countDots; i++)
+                        {
+                            writer.WriteLine("X: " + X[i].ToString() + " , Y: " + Y[i].ToString());
+                        }
+                        writer.Flush();
+                        MessageBox.Show("Сохранение в текстовый файл завершено");
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
+                    finally
+                    {
+                        writer.Close();
+                    }
+                }
+            }
+        }
+
+        // Сохранение в файл Word
+        private void WordSaveToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                // вывод отчета в ворд
+                Microsoft.Office.Interop.Word.Application msWord;
+
+                Microsoft.Office.Interop.Word.Document doc;
+
+                object objMiss;
+
+                object endofdoc = "\\endofdoc";
+
+                msWord = new Microsoft.Office.Interop.Word.Application();
+                objMiss = System.Reflection.Missing.Value;
+                msWord.Visible = true;
+
+                doc = msWord.Documents.Add(ref objMiss, ref objMiss, ref objMiss, ref objMiss);
+
+                Microsoft.Office.Interop.Word.Table tbl1;
+
+                Microsoft.Office.Interop.Word.Range wordRange = doc.Bookmarks.get_Item(ref endofdoc).Range;
+
+                int rowsNum = countDots + 1;
+
+                tbl1 = doc.Content.Tables.Add(wordRange, rowsNum, 2, ref objMiss, ref objMiss);
+
+                tbl1.Borders.Enable = 1;
+
+                tbl1.Cell(1, 1).Range.Text = "Координата Х";
+                tbl1.Cell(1, 2).Range.Text = "Координата Y";
+
+                // добавляем в таблицу данные
+                for (int i = 2; i <= rowsNum; i++)
+                {
+
+                    // добавляем текст
+                    tbl1.Cell(i, 1).Range.Text = X[i - 2].ToString();
+                    tbl1.Cell(i, 2).Range.Text = Y[i - 2].ToString();
+                }
+            }
+            catch (Exception)
+            { }
+        }
+
     }
 }
