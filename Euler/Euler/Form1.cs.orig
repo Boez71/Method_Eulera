@@ -104,6 +104,13 @@ namespace Euler
                 MessageBox.Show(ex.Message);
             }
         }
+
+        private void оПрограммеToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AboutBox1 aboutForm = new AboutBox1();
+            aboutForm.Show();
+        }
+
         // Сохранение в текстовый файл
         private void TextSaveToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -249,12 +256,6 @@ namespace Euler
 
             //устанавливаем точность
             textBox1.Text = (rnd.Next(1, 5)).ToString();
-        }
-
-        private void оПрограммеToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            AboutBox1 aboutForm = new AboutBox1();
-            aboutForm.Show();
         }
     }
 }
